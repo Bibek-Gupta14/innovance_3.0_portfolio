@@ -1,4 +1,5 @@
 import React from "react";
+import { heroDetails, userData } from "../../../data/data";
 
 const Hero: React.FC = () => {
   return (
@@ -7,7 +8,7 @@ const Hero: React.FC = () => {
         <div className="max-w-6xl mx-6 lg:mx-8 sm:mx-4 grid lg:gap-16 md:gap-12 max-md:gap-10 lg:pt-8 md:grid-cols-[1fr_2fr_1fr]">
           {/* Hero Text and Image */}
           <div className="grid xl:gap-8 lg:gap-6 md:order-2 text-center">
-            <h1 className="text-center lg:text-4xl xl:text-5xl text-3xl font-montserratBold font-bold tracking-wide mb-2">
+            <h1 className="text-center lg:text-4xl xl:text-5xl text-3xl font-imfell tracking-wide mb-2">
               Hi, I’m Alice <br />
               UI/UX Interaction Developer <br />
               Based in England
@@ -37,14 +38,13 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Biography, Contact, and Services */}
-          <div className="grid gap-8 md:order-1 md:mt-40 md:text-left xl:grid-rows-3 xl:gap-y-16 xl:mt-64">
+          <div className="grid gap-8 md:order-1 md:mt-40 md:text-left xl:grid-rows-3 xl:gap-y-16 xl:mt-64 text-center">
             <div>
               <h3 className="text-sm font-normal text-gray-500 mb-4 font-montserrat">
                 BIOGRAPHY
               </h3>
               <p className="font-imfell text-lg text-gray-900">
-                Work for money and design for love! I'm Alice, an UI/UX
-                Interaction Designer based in England
+                {heroDetails.bio}
               </p>
             </div>
             <div>
@@ -52,9 +52,9 @@ const Hero: React.FC = () => {
                 CONTACT
               </h3>
               <p className="font-imfell text-lg text-gray-900">
-                London, England <br />
-                alice@example.com <br />
-                +44 1234567890
+                {heroDetails.location} <br />
+                {userData.email} <br />
+                {heroDetails.PNO}
               </p>
             </div>
             <div>
@@ -62,21 +62,24 @@ const Hero: React.FC = () => {
                 SERVICES
               </h3>
               <p className="font-imfell text-lg text-gray-900">
-                Website Design <br />
-                UI/UX Development <br />
-                Graphic Design
+                {heroDetails.services.map((service, index) => (
+                  <span key={index}>
+                    {service}
+                    {index < heroDetails.services.length - 1 && <br />}
+                  </span>
+                ))}
               </p>
             </div>
           </div>
 
           {/* Experience, Projects, and Companies */}
-          <div className="grid gap-8 md:order-3 md:mt-40 md:text-right xl:grid-rows-3 xl:gap-y-16 xl:mt-64">
+          <div className="grid gap-8 md:order-3 md:mt-40 md:text-right xl:grid-rows-3 xl:gap-y-16 xl:mt-64 text-center">
             <div>
               <h3 className="text-sm font-normal text-gray-500 mb-4 font-montserrat">
                 YEARS OF EXPERIENCE
               </h3>
               <p className="text-4xl font-montserratBold font-semibold text-gray-900">
-                8+
+                {heroDetails.YOR}
               </p>
             </div>
             <div>
@@ -92,7 +95,7 @@ const Hero: React.FC = () => {
                 CLIENTS ON WORLDWIDE
               </h3>
               <p className="text-4xl font-montserratBold font-semibold text-gray-900">
-                80+
+                {heroDetails.Clients}
               </p>
             </div>
             <div>
@@ -100,7 +103,7 @@ const Hero: React.FC = () => {
                 PROJECTS DONE
               </h3>
               <p className="text-4xl font-montserratBold font-semibold text-gray-900">
-                67
+                {heroDetails.Projects}
               </p>
             </div>
           </div>
