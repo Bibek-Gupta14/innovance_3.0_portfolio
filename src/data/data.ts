@@ -13,11 +13,13 @@ export const footer = {
 export const navlinks = [
   {
     name: "WORKS",
-    link: "",
+    link: "LatestProjects",
+    elementId: "LatestProjects",
   },
   {
     name: "CONTACTS",
     link: "",
+    elementId: "CallAlice",
   },
 ];
 
@@ -34,7 +36,7 @@ export const socials = [
   },
   {
     link: "https://github.com/",
-    icon: "https://img.icons8.com/?size=100&id=63777&format=png&color=000000",
+    icon: "https://img.icons8.com/?size=100&id=62856&format=png&color=000000",
     name: "github",
   },
   {

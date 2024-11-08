@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { userData } from "../../../data/data";
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 export const CallBruno = () => {
   const [hover, setHover] = useState(false);
@@ -11,16 +11,13 @@ export const CallBruno = () => {
 
   return (
     <div className="m-auto w-fit font-imfell relative">
-      <motion.div
-        initial={{ scale: 1 }}
-        animate={hover ? { scale: 1.05 } : { scale: 1 }}
-        transition={{ duration: 0, ease: [0.4, 0, 0.2, 1] }}
-        className={`border-gray-300 border-3 border-dashed rounded-full w-72 h-72 md:w-96 md:h-96 absolute ${
+      <div
+        className={`border-gray-300 border-[3px] border-dashed rounded-full w-[272px] h-[272px] md:w-80 md:h-80 absolute ${
           !hover ? "animate-spin" : "animate-none"
         } transition-all`}
-      ></motion.div>
+      ></div>
       <div
-        className="border-3 border-transparent rounded-full w-72 h-72 md:w-96 md:h-96 flex flex-col justify-center items-center z-10 relative hover:scale-105 transition-all"
+        className="bg-transparent rounded-full w-[272px] h-[272px] md:w-80 md:h-80 flex flex-col justify-center items-center z-10 relative hover:scale-105 transition-all duration-700"
         onMouseOver={() => {
           setHover(true);
         }}

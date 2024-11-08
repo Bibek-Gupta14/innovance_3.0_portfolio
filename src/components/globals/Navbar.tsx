@@ -17,26 +17,48 @@ export const Navbar = () => {
     hidden: { opacity: 0, y: 0 },
     visible: { opacity: 1, y: 108 },
   };
+
+  function scrollToElement(
+    event: React.MouseEvent<HTMLElement, MouseEvent>,
+    id: string,
+    padding: number = 0
+  ) {
+    event.preventDefault();
+
+    const element = document.getElementById(id);
+    if (element) {
+      const targetPosition =
+        element.getBoundingClientRect().top + window.scrollY - padding;
+      window.scrollTo({ top: targetPosition, behavior: "smooth" });
+    }
+  }
+
   return (
     <div className="text-sm font-montserrat font-black w-[70vw] m-auto">
       <div className="flex justify-between items-center z-50 relative py-6 bg-white">
-        <div className="md:flex gap-7 hidden">
+        <div className="md:flex gap-7 hidden md:w-[45%]">
           {navlinks &&
             navlinks.map((navlink) => (
               <div>
-                <a href={navlink.link} className="text-black no-underline">
+                <a
+                  href="#"
+                  className="text-black no-underline"
+                  onClick={(e) => {
+                    scrollToElement(e, `${navlink.elementId}`, 80);
+                  }}
+                >
                   {navlink.name}
                 </a>
               </div>
             ))}
         </div>
-        <div className="flex flex-col items-center gap-3">
+        <div className="flex flex-col items-center gap-3 md:w-[10%]">
           <div>
             <img src={navbar_details.logo} alt="logo" className="w-10" />
           </div>
           <div>{navbar_details.name}</div>
         </div>
-        <div className="hidden md:block">
+        <div className="hidden md:flex md:justify-end md:w-[45%]">
           <SocialMediaLinks />
         </div>
         <div className="md:hidden">

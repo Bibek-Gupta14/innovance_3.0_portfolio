@@ -13,7 +13,7 @@ export const Footer = () => {
         <div>
           <a
             href={`mailto:${footer.email}`}
-            className="text-black no-underline"
+            className="text-black no-underline hover:underline hover:font-semibold"
           >
             {footer.email}
           </a>

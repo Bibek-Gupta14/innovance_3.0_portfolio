@@ -1,5 +1,6 @@
 import React from "react";
 import { heroDetails, userData } from "../../../data/data";
+import "../../../styles/hero.css";
 
 const Hero: React.FC = () => {
   return (
@@ -13,18 +14,8 @@ const Hero: React.FC = () => {
           "
         >
           {/* Hero Text and Image */}
-          <div
-            className="
-              grid xl:gap-8 lg:gap-6
-              md:order-2 text-center
-            "
-          >
-            <h1
-              className="
-                text-center lg:text-4xl xl:text-5xl text-3xl
-                font-imfell tracking-wide mb-2
-              "
-            >
+          <div className="grid xl:gap-8 lg:gap-6 md:order-2 text-center">
+            <h1 className="text-center lg:text-4xl xl:text-5xl text-3xl font-montserratBold font-bold tracking-wide mb-2">
               Hi, I’m Alice <br />
               UI/UX Interaction Developer <br />
               Based in England
@@ -76,13 +67,7 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Biography, Contact, and Services */}
-          <div
-            className="
-              grid gap-8 md:order-1
-              md:mt-40 md:text-left xl:grid-rows-3
-              xl:gap-y-16 xl:mt-64 text-center
-            "
-          >
+          <div className="grid gap-8 md:order-1 md:mt-40 md:text-left xl:grid-rows-3 xl:gap-y-16 xl:mt-64">
             <div>
               <h3
                 className="
@@ -132,13 +117,7 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Experience, Projects, and Companies */}
-          <div
-            className="
-              grid gap-8 md:order-3
-              md:mt-40 md:text-right xl:grid-rows-3
-              xl:gap-y-16 xl:mt-64 text-center
-            "
-          >
+          <div className="grid gap-8 md:order-3 md:mt-40 md:text-right xl:grid-rows-3 xl:gap-y-16 xl:mt-64">
             <div>
               <h3
                 className="

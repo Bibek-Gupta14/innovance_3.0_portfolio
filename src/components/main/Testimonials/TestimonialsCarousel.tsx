@@ -34,7 +34,7 @@ export const TestimonialCarousel = () => {
   };
 
   return (
-    <div className="relative w-full h-[500px] bg-white font-montserrat flex items-center justify-center px-4">
+    <div className="relative w-full h-[400px] md:h-[500px] bg-white font-montserrat flex items-center justify-center px-4">
       <button
         onClick={handlePreviousSlide}
         className="absolute left-4 md:left-10 lg:left-20 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-900 p-2"
